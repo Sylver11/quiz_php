@@ -13,27 +13,9 @@
 
 
 
-   <div id="content"> 
+<div id="content"> 
 <H1>Welcome to the best quiz ever!</H1>
-<?php 
-$correct = 0;
-if(!empty($_POST)){
 
-if($correct =="20"){
-    echo "Crazy you are a genuis! <style='background-color:red;'>";
-    echo "You got ". $correct . " out of " . count($questions[0]);
-}
-elseif($correct >="16" && $correct <"20"){
-    echo "Well done my friend!!";
-}
-elseif($correct <= "15" && $correct >="10"){
-    echo "Not too bad amigo";
-}
-else{
-    echo "<p class='tags'> OMG did you even go to school?</p> <body style='background-color:red;'>";
-    echo "You got ". $correct . " out of " . count($questions);
-}};
-?>
 <form action="index.php" method="post">     
 <?php $questions = array(
     
@@ -70,25 +52,23 @@ else{
 for($x=0; $x <= 19; ++$x){
     echo "<br><br>";
     print_r($questions[0][$x]);
-
     echo "\n <br>";
-    for($y=0 ; $y <= 3; ++$y){
-       echo "<input type=\"radio\" name=\"". $questions[1][$x] . "\" value=\"" .$questions[2][$x][$y]."\"
-       
-       >
-       \"".$questions[2][$x][$y]."\"" ;}};
-       echo "<br><br>";
+        for($y=0 ; $y <= 3; ++$y){
+            echo "<input type=\"radio\" name=\"". $questions[1][$x] . "\" value=\"" .$questions[2][$x][$y]."\">\"".$questions[2][$x][$y]."\"" ;}};
+            echo "<br><br>";
 ?>
+
+
+
 
 <input id="mybutton" type="submit" value="Submit">
 
+
+
+
 <?php
-
-
-
 $correct = 0;
 $solutions = array("questionA"=>"6 years","questionB" => "Russia","questionC" =>"1939", "questionD" => "1936","questionE"=>"6000000", "questionF"=> "Joseph Goebbels", "questionG" => "Russia", "questionH"=>"4","questionI"=>"Poland","questionJ"=>"Emperor Hirohito", "questionK"=>"Commit sucide","questionL"=>"6 June 1944","questionM"=>"Normandy","questionN"=>"Soviet Union", "questionO"=>"Dwight Eisenhower","questionP"=>"Attack on Pearl Habour","questionQ"=>"Joseph Stalin","questionR"=>"Spain","questionS"=>"Sent them to internment camps","questionT"=>"Kamikaze");
-
 
 
 if(!empty($_POST)){
@@ -98,21 +78,25 @@ if(!empty($_POST)){
         }}}
 
 
+if(!empty($_POST)){
 
-// if(!empty($_POST)){
+if($correct =="20"){
+    echo "Crazy you are a genuis! <style='background-color:green;'>";
+    echo "You got ". $correct . " out of 20";
+}
+elseif($correct >="16" && $correct <"20"){
+    echo "Well done my friend!! <body style='background-color:;'>";
+    echo "You got ". $correct . " out of 20";
+}
+elseif($correct <= "15" && $correct >="10"){
+    echo "Not too bad amigo";
+    echo "You got ". $correct . " out of 20";
+}
+else{
+    echo "<p class='tags'> Please try again my friend!</p> <body style='background-color:red;'>";
+    echo "You got ". $correct . " out of 20";
+}};
 
-// if($correct =="20"){
-//     echo "Crazy you are a genuis! <style='background-color:red;'>";
-// }
-// elseif($correct >="16" && $correct <"20"){
-//     echo "Well done my friend!!";
-// }
-// elseif($correct <= "15" && $correct >="10"){
-//     echo "Not too bad amigo";
-// }
-// else{
-//     echo "<p class='tags'> OMG did you even go to school?</p> <body style='background-color:red;'>";
-// }};
 
 ?>
 
